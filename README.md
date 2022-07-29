@@ -109,6 +109,11 @@ root@617579-logging01:~# virsh net-dumpxml vlannet
 |40|Storage|172.16.3.0/24|[{'start': '172.16.3.4', 'end': '172.16.3.250'}]|vlannet|----|
 |50|Tenant|172.16.0.0/24|[{'start': '172.16.0.4', 'end': '172.16.0.250'}]|vlannet|----|
 
+### Hardware
+
+* In order to deploy RDO, you will need a decent amount of hardware available. OpenStack is a cloud software stack and to be useful, it requires some resources.
+
+
 |Role|
 |----|
 |Baremetal Node|
@@ -131,3 +136,53 @@ root@617579-logging01:~# virsh net-dumpxml vlannet
 |Controller-0|18GB|6|100GB|
 |Compute-0|18GB|6|100GB|
 
+
+```
+root@617579-logging01:~# virsh list --all
+ Id   Name          State
+------------------------------
+ 8    undercloud    running
+ 50   root-cmpt-0   running
+ 51   root-ctrl-0   running
+root@617579-logging01:~# 
+```
+
+### Networking for your different nodes
+
+*Undercloud* needs interfaces on provisioning and external networks. 
+
+```
+root@617579-logging01:~# virsh domiflist undercloud
+ Interface   Type      Source     Model    MAC
+--------------------------------------------------------------
+ vnet0       bridge    provibr1   virtio   52:54:00:3b:d8:b6
+ vnet1       network   default    virtio   52:54:00:9e:6f:5b
+
+root@617579-logging01:~# 
+```
+
+*Controllers* need interfaces on all networks (provisioning), (vlan), (external)
+
+```
+root@617579-logging01:~# virsh domiflist root-ctrl-0
+ Interface   Type      Source     Model    MAC
+--------------------------------------------------------------
+ vnet5       bridge    provibr1   virtio   52:54:00:bf:9c:d3
+ vnet6       bridge    vlanbr2    virtio   52:54:00:9a:cb:47
+ vnet7       network   default    virtio   52:54:00:f6:aa:f4
+
+root@617579-logging01:~# 
+```
+
+*Computes* need interfaces on all networks (provisioning), (vlan), (external - optional)
+
+```
+root@617579-logging01:~# virsh domiflist root-cmpt-0
+ Interface   Type      Source     Model    MAC
+--------------------------------------------------------------
+ vnet2       bridge    provibr1   virtio   52:54:00:21:d6:e5
+ vnet3       bridge    vlanbr2    virtio   52:54:00:b0:24:38
+ vnet4       network   default    virtio   52:54:00:6d:f1:47
+
+root@617579-logging01:~# 
+```
