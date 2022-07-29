@@ -109,3 +109,25 @@ root@617579-logging01:~# virsh net-dumpxml vlannet
 |40|Storage|172.16.3.0/24|[{'start': '172.16.3.4', 'end': '172.16.3.250'}]|vlannet|----|
 |50|Tenant|172.16.0.0/24|[{'start': '172.16.0.4', 'end': '172.16.0.250'}]|vlannet|----|
 
+|Role|
+|----|
+|Baremetal Node|
+
+
+|Memory|CPU|HDD|
+|----|----|----|
+|128GB|24|2TB|
+
+
+
+|Role|
+|----|
+|Virtual Machine|
+
+
+|Node Name|Memory|CPU|HDD|
+|----|----|----|----|
+|Undercloud|16GB|6|100GB|
+|Controller-0|18GB|6|100GB|
+|Compute-0|18GB|6|100GB|
+
