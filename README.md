@@ -56,14 +56,12 @@ Bridge:         vlanbr2
 ```
 
 
-
-|VLAN|NETWORK|IP|RANGE|NetworkInfo|
-|----|----|----|----|----|
-|FLAT|External|192.168.122.0/24|[{'start': '192.168.122.50', 'end': '192.168.122.100'}]|default|
-|FLAT|Provisioning|192.168.24.0/24|[{'start': '192.168.24.10', 'end': '192.168.24.200'}]|provisioning|
-|20|Internal API|172.16.2.0/24|[{'start': '172.16.2.4', 'end': '172.16.2.250'}]|vlannet|
-|30|Storage|172.16.1.0/24|[{'start': '172.16.1.4', 'end': '172.16.1.250'}]|vlannet|
-|40|Storage|172.16.3.0/24|[{'start': '172.16.3.4', 'end': '172.16.3.250'}]|vlannet|
-|50|Tenant|172.16.0.0/24|[{'start': '172.16.0.4', 'end': '172.16.0.250'}]|vlannet|
-
+|VLAN|NETWORK|IP|RANGE|NetworkInfo|Gateway|
+|----|----|----|----|----|----|
+|FLAT|External|192.168.122.0/24|[{'start': '192.168.122.2', 'end': '192.168.122.254'}]|default|192.168.122.1|
+|FLAT|Provisioning|192.168.24.0/24|NOT DEFINED|provisioning|192.168.24.1|
+|20|Internal API|172.16.2.0/24|[{'start': '172.16.2.4', 'end': '172.16.2.250'}]|vlannet|----|
+|30|Storage|172.16.1.0/24|[{'start': '172.16.1.4', 'end': '172.16.1.250'}]|vlannet|----|
+|40|Storage|172.16.3.0/24|[{'start': '172.16.3.4', 'end': '172.16.3.250'}]|vlannet|----|
+|50|Tenant|172.16.0.0/24|[{'start': '172.16.0.4', 'end': '172.16.0.250'}]|vlannet|----|
 
