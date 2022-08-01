@@ -5,7 +5,7 @@
   <img 
     width="300"
     height="300"
-    src="https://github.com/NileshChandekar/tripleo-train-deployment/blob/main/tripleologo.png/300/300"
+    src="https://github.com/NileshChandekar/tripleo-train-deployment/blob/main/tripleologo.png/600/300"
   >
 </p>
 
