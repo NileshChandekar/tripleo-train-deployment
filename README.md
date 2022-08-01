@@ -10,7 +10,6 @@
 </p>
 
 
-![logo](https://github.com/NileshChandekar/tripleo-train-deployment/blob/main/tripleologo.png)
 
 
 ### Networks
