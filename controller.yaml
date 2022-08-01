@@ -1,0 +1,47 @@
+resource_registry:
+  OS::TripleO::Controller::Net::SoftwareConfig: /home/stack/templates/nic-config/controller.yaml
+  OS::TripleO::Compute::Net::SoftwareConfig: /home/stack/templates/nic-config/compute.yaml
+  OS::TripleO::NodeUserData: /usr/share/openstack-tripleo-heat-templates/firstboot/userdata_root_password.yaml
+
+
+parameter_defaults:
+
+  StorageNetCidr: '172.16.1.0/24'
+  StorageAllocationPools: [{'start': '172.16.1.4', 'end': '172.16.1.250'}]
+  StorageNetworkVlanID: 30
+
+
+  StorageMgmtNetCidr: '172.16.3.0/24'
+  StorageMgmtAllocationPools: [{'start': '172.16.3.4', 'end': '172.16.3.250'}]
+  StorageMgmtNetworkVlanID: 40
+
+
+  InternalApiNetCidr: '172.16.2.0/24'
+  InternalApiAllocationPools: [{'start': '172.16.2.4', 'end': '172.16.2.250'}]
+  InternalApiNetworkVlanID: 20
+
+
+  TenantNetCidr: '172.16.0.0/24'
+  TenantAllocationPools: [{'start': '172.16.0.4', 'end': '172.16.0.250'}]
+  TenantNetworkVlanID: 50
+  TenantNetPhysnetMtu: 1500
+
+
+  ExternalNetCidr: '192.168.122.0/24'
+  ExternalAllocationPools: [{'start': '192.168.122.4', 'end': '192.168.122.250'}]
+  ExternalInterfaceDefaultRoute: '192.168.122.1'
+
+
+  DnsServers: [192.168.122.1,8.8.8.8]
+  NeutronNetworkType: 'geneve,vlan'
+  NeutronNetworkVLANRanges: 'datacentre:1:1000'
+  BondInterfaceOvsOptions: "bond_mode=active-backup"
+
+  ComputeParameters:
+    NeutronBridgeMappings: ''
+  ControlPlaneDefaultRoute: 192.168.24.1
+  ControlPlaneSubnetCidr: '24'
+  ControllerParameters:
+    NeutronBridgeMappings: datacentre:br-ex,tenant:br-isolated
+  EC2MetadataIp: 192.168.24.1
+  NodeRootPassword: '0'
