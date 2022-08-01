@@ -2,7 +2,7 @@
 
 
 
-![logo](https://github.com/NileshChandekar/tripleo-train-deployment/blob/main/tripleo.jpeg)
+![logo](https://github.com/NileshChandekar/tripleo-train-deployment/blob/main/tripleologo.png)
 
 
 ### Networks
