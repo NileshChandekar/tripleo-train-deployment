@@ -1,6 +1,14 @@
 # tripleo-train-deployment
 
 
+<p align="center">
+  <img 
+    width="300"
+    height="300"
+    src="https://github.com/NileshChandekar/tripleo-train-deployment/blob/main/tripleologo.png/300/300"
+  >
+</p>
+
 
 ![logo](https://github.com/NileshChandekar/tripleo-train-deployment/blob/main/tripleologo.png)
 
