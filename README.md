@@ -3,7 +3,7 @@
 
 <p align="center">
   <img 
-    width="300"
+    width="600"
     height="300"
     src="https://github.com/NileshChandekar/tripleo-train-deployment/blob/main/tripleologo.png/600/300"
   >
